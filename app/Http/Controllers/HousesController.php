@@ -17,7 +17,21 @@ class HousesController extends BaseController
 
         // récupération de toutes les maisons
         $houses = House::all();
+        return view('layout/houses', ['houses' => $houses]);
         return $houses;
+    }
+
+    /**
+     * /houses/{id}
+     * GET
+     */
+    public function item($id) {
+
+        // récupération d'une maison grâce à son id
+        $house = House::findOrFail($id);
+        return view('layout/house', ['houses' => $house]);
+        //return $character;
+
     }
 
 }

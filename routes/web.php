@@ -48,3 +48,12 @@ $router->get(
     ]
 );
 
+// création d'une route/endpoint pour récupérer la liste des maisons
+$router->get(
+    '/houses/{id}', // endpoint
+    [
+        'uses' => 'HousesController@item',
+        'as'   => 'houses-item'
+    ]
+);
+

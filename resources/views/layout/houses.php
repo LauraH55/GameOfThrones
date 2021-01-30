@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -20,22 +19,16 @@
     </header>
     <main>
         <div class="wrapper">
-
-   <ul class="characters-list">
-            <?php foreach ($characters as $character): ?>
-            <li class="character-card">
-            <a href="<?= route('characters-item', ['id' => $character->id]); ?>">
-
-                <div class="avatar" style="background: #e3e3e3;">
-                    <img src="<?= url('/') . '/assets/img/' . $character->image; ?>" alt="<?= $character->first_name; ?>">
-                </div>
-                <div class="name">
-                    <?= $character->first_name . ' ' . $character->last_name; ?>
-                </div>
-            </a>
-        </li>
-        <?php endforeach; ?>
-    </ul>        </div>
-
+                <ul class="houses-list">
+                <?php foreach ($houses as $house): ?>
+                    <li class="house-logo" style="background: #<?=$house->colour;?>">
+                <a href="<?= route('houses-item', ['id' => $house->id]); ?>">
+                <img src="<?= url('/') . '/assets/img/houses/' . $house->image; ?>" alt="<?= $house->image; ?>">
+                </a>
+            </li>
+            <?php endforeach; ?>
+            </ul>
+        </div>
     </main>
+
 </body></html>
