@@ -16,10 +16,11 @@ class CharactersController extends BaseController
     public function list() {
 
         // récupération de tous les personnages
-        $characters = Character::all();
+        $characters = Character::all()->load('house');
         // Je retourne ma view grâce à la méthode native de Lumen
         return view('layout/homepage', ['characters' => $characters]);
         //return $characters;
+
     }
 
 

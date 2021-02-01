@@ -24,7 +24,7 @@
    <ul class="characters-list">
 
             <li class="character-card">
-            <a href="#/character/10">
+            <a href="<?= route('characters-item', ['id' => $houses->id]); ?>">
 
                 <div class="avatar" style="background: #baa207;">
                     <img src="./Game of Thrones_files/cersei.png" alt="Cersei">

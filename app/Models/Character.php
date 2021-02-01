@@ -11,6 +11,8 @@ use App\Models\Title;
 // De ce fait Character bénéficie de toutes les fonctionnalités proposées par la classe parente
 class Character extends Model
 {
+    protected $table = 'character';
+
     public function title()
     {
         // DOC : https://laravel.com/docs/6.x/eloquent-relationships#one-to-many
@@ -20,5 +22,16 @@ class Character extends Model
             'id_title',  // argument qui correspond au champs character.id_title
             'id'  //    argument qui correspond au champ title.id
         );
+    }
+
+    public function house(){
+
+        return $this->belongsToMany(
+            House::class,
+            'house_has_characters',
+            'character',
+            'house'
+        );
+
     }
 }

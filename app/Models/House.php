@@ -10,8 +10,11 @@ use Illuminate\Database\Eloquent\Model;
 // De ce fait Character bénéficie de toutes les fonctionnalités proposées par la classe parente
 class House extends Model {
 
+    protected $table = 'house';
+
     public function houses()
     {
+
         // DOC : https://laravel.com/docs/6.x/eloquent-relationships#one-to-many
         // déclaration qu'une maison à n personnages
         return $this->hasMany(
