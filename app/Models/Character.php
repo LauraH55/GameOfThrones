@@ -24,6 +24,19 @@ class Character extends Model
         );
     }
 
+
+    public function houses()
+    {
+        return $this->belongsToMany(
+            House::class,
+            'house_has_characters',
+            'character',
+            'house'
+        );
+    }
+
+
+    /*
     public function house(){
 
         return $this->belongsToMany(
@@ -32,6 +45,6 @@ class Character extends Model
             'character',
             'house'
         );
-
     }
+    */
 }

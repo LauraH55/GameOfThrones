@@ -12,6 +12,20 @@ class House extends Model {
 
     protected $table = 'house';
 
+
+    public function characters() {
+
+        return $this->belongsToMany(
+            Character::class,
+            'house_has_characters',
+            'house',
+            'character'
+        );
+    }
+
+
+
+    /*
     public function houses()
     {
 
@@ -20,6 +34,6 @@ class House extends Model {
         return $this->hasMany(
             House::class,
         );
-
     }
+    */
 }

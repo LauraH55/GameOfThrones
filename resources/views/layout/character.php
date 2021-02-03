@@ -34,23 +34,22 @@
                     </div>
                 </div>
                 <div class="col-4">
-                    <div class="avatar" style="background: #e3e3e3;">
+                    <div class="avatar" style="background: #<?= $characters->houses[0]->colour; ?>">
                         <img src="<?= url('/') . '/assets/img/' . $characters->image; ?>" alt="<?= $characters->image; ?>">
                     </div>
                     <div class="infos">
                         <h3>Maisons</h3>
                         <div class="houses">
                             <ul>
-                                <li class="house-logo" style="background: #e3e3e3;">
-                                    <a href="#/house/1">
-                                    <img src="<?= url('/') . '/assets/img/houses/' . $characters->image; ?>" alt="<?= $characters->id_title; ?>">
-                                    </a>
-                                </li>
-                                <li class="house-logo" style="background: #2b3aab;">
-                                    <a href="#/house/3">
-                                        <img src="./Game of Thrones_files/tully.png" alt="Tully">
-                                    </a>
-                                </li>
+                                <?php
+                                foreach($characters->houses as $house) {
+                                    echo '<li class="house-logo" style="background: #' .  $house->colour . '">';
+                                        echo '<a href="#/house/1">';
+                                            echo '<img src="'. url('/') . '/assets/img/houses/' . $house->image . '" alt="' . $house->name .'">';
+                                        echo '</a>';
+                                    echo '</li>';
+                                }
+                                ?>
                             </ul>
                         </div>
                         <ul class="meta">
